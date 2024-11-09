@@ -30,16 +30,27 @@
 		{
 			"name": "Secured",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNzMxMTI2Mzc5LCJlIjoidHV0b3JpYWxzQGV4YW1wbGUuY29tIiwiciI6WyJVU0VSIl19.UD3N_rLXSjRegzWdM85SDgAXHcaG7VcEC7LEZ_zSLtr6PF_53G8AIC95ts5PXczmP4eSvyBtjO5IKbl2LF8kNQ",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/secured",
+					"raw": "http://localhost:8080/api/secured",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"api",
 						"secured"
 					]
 				}

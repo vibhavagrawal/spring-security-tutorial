@@ -1,5 +1,7 @@
 package com.technosfirst.tutorials.springsecurity.security;
 
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import lombok.RequiredArgsConstructor;
@@ -25,5 +27,12 @@ public class JwtHandler {
                 .claim("r", roles)
                 .signWith(Keys.hmacShaKeyFor(properties.getSecretKey().getBytes()))
                 .compact();
+    }
+
+    public Jws<Claims> extractToken(String token) {
+        return Jwts.parser()
+                .verifyWith(Keys.hmacShaKeyFor(properties.getSecretKey().getBytes()))
+                .build()
+                .parseSignedClaims(token);
     }
 }
