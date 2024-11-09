@@ -21,4 +21,9 @@ public class RestHelloController {
     public String secured(@AuthenticationPrincipal UserPrincipal principal) {
         return String.format("Hello, %s! Your user id is %s", principal.getEmail(), principal.getUserId());
     }
+
+    @GetMapping("/admin")
+    public String admin(@AuthenticationPrincipal UserPrincipal principal) {
+        return String.format("Hello, %s! Your user id is %s. You see this as you are an admin!", principal.getEmail(), principal.getUserId());
+    }
 }

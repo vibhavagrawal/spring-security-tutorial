@@ -35,7 +35,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNzMxMTI2Mzc5LCJlIjoidHV0b3JpYWxzQGV4YW1wbGUuY29tIiwiciI6WyJVU0VSIl19.UD3N_rLXSjRegzWdM85SDgAXHcaG7VcEC7LEZ_zSLtr6PF_53G8AIC95ts5PXczmP4eSvyBtjO5IKbl2LF8kNQ",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMCIsImV4cCI6MTczMTE1ODE5MSwiZSI6ImFkbWluQGV4YW1wbGUuY29tIiwiciI6WyJST0xFX0FETUlOIl19.w81e9jCRwnERIETDeO0hp44hIcOUf8xpcEJCd-IPR3W-vOVhZuWfmV2ieTPV0kn9exytHsHjs86dGrXBBytoFw",
 							"type": "string"
 						}
 					]
@@ -58,13 +58,43 @@
 			"response": []
 		},
 		{
+			"name": "Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMCIsImV4cCI6MTczMTE1ODUyMiwiZSI6ImFkbWluQGV4YW1wbGUuY29tIiwiciI6WyJST0xFX0FETUlOIl19.TXnq9nIrYwlzTivtAYl34nI2Jvkigrl4O27heSZY17X83pT5ns7WYihCkNGJH9cxOtLrMihXqWFlCa-jc3GTLQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Login",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"tutorials@example.com\",\r\n    \"password\": \"test\"\r\n}",
+					"raw": "{\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"test\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
