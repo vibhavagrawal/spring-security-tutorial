@@ -17,6 +17,12 @@ public class SecurityConfig {
                 .cors(AbstractHttpConfigurer::disable)
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .formLogin(AbstractHttpConfigurer::disable)
+                .securityMatcher("/**")
+                .authorizeHttpRequests(registry -> registry
+                        .requestMatchers("/api/").permitAll()
+                        .anyRequest().authenticated()
+                )
         ;
 
         return http.build();

@@ -14,4 +14,9 @@ public class RestHelloController {
     public String hello() {
         return "Hello, World!";
     }
+
+    @GetMapping("/secured")
+    public String secured() {
+        return "Hello, secured!";
+    }
 }

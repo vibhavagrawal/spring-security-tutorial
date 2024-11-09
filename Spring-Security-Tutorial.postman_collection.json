@@ -26,6 +26,25 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Secured",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/secured",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"secured"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
