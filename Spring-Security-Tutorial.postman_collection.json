@@ -1,0 +1,31 @@
+{
+	"info": {
+		"_postman_id": "b1e30f25-0bfe-4b97-a104-3c25c9b1bcef",
+		"name": "Spring-Security-Tutorial",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30655914",
+		"_collection_link": "https://global-ducan.postman.co/workspace/Global-Ducan~7feb8491-f566-4408-8bc7-82711c676644/collection/30655914-b1e30f25-0bfe-4b97-a104-3c25c9b1bcef?action=share&source=collection_link&creator=30655914"
+	},
+	"item": [
+		{
+			"name": "Hello",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
