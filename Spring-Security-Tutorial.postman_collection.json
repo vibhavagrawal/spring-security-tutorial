@@ -88,6 +88,36 @@
 			"response": []
 		},
 		{
+			"name": "AnotherAdmin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMCIsImV4cCI6MTczMTE1ODg3NSwiZSI6ImFkbWluQGV4YW1wbGUuY29tIiwiciI6WyJST0xFX0FETUlOIl19.c_ASg9rX64N0m82ppIyKU3BJXZwIiWbYXPP4GhBdEeIay4eBeizy5vravuSqe1x1fi2-zt-i8XvQ42xqymlPQA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/anotheradmin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"anotheradmin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Login",
 			"request": {
 				"method": "POST",
