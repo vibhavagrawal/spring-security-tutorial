@@ -1,4 +1,4 @@
-package com.technosfirst.tutorials.springsecurity.controller;
+package com.technosfirst.tutorials.springsecurity.controller.rest;
 
 import com.technosfirst.tutorials.springsecurity.config.WithAdminUser;
 import com.technosfirst.tutorials.springsecurity.config.WithMockUser;
@@ -60,5 +60,26 @@ class RestHelloControllerTest {
         api.perform(get("/api/admin"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsStringIgnoringCase("Your user id is 1. You see this as you are an admin")));
+    }
+
+    @Test
+    void notLoggedIn_shouldNotSeeAnotherAdminEndpoint() throws Exception {
+        api.perform(get("/api/anotheradmin"))
+                .andExpect(status().isUnauthorized());
+    }
+
+    @Test
+    @WithMockUser
+    void simpleUser_shouldNotSeeAnotherAdminEndpoint() throws Exception {
+        api.perform(get("/api/anotheradmin"))
+                .andExpect(status().isForbidden());
+    }
+
+    @Test
+    @WithAdminUser
+    void adminUser_shouldSeeAnotherAdminEndpoint() throws Exception {
+        api.perform(get("/api/anotheradmin"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsStringIgnoringCase("Your user id is 1. You see this another endpoint only if you are an admin")));
     }
 }

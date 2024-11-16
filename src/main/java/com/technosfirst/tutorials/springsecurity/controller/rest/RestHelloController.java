@@ -1,4 +1,4 @@
-package com.technosfirst.tutorials.springsecurity.controller;
+package com.technosfirst.tutorials.springsecurity.controller.rest;
 
 import com.technosfirst.tutorials.springsecurity.security.UserPrincipal;
 import lombok.RequiredArgsConstructor;
@@ -34,7 +34,7 @@ public class RestHelloController {
 
     @GetMapping("/anotheradmin")
     @PreAuthorize("hasRole('ADMIN')")
-    public String anotheradmin(@AuthenticationPrincipal UserPrincipal principal) {
+    public String adminWithPreAuthMethodTag(@AuthenticationPrincipal UserPrincipal principal) {
         return String.format("Hello, %s! Your user id is %s. You see this another endpoint only if you are an admin!", principal.getEmail(), principal.getUserId());
     }
 }
